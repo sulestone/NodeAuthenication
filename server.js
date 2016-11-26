@@ -10,10 +10,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
-var confidDB = require('./config/database');
+var configDB = require('./config/database');
 
 mongoose.connect(configDB.url);
-
+console.log('DB connected on: ' + configDB.url);
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser());
